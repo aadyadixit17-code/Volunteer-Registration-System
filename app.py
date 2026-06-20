@@ -40,6 +40,10 @@ def dashboard():
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
 
+    # Total Volunteers
+    cursor.execute("SELECT COUNT(*) FROM volunteers")
+    total_volunteers = cursor.fetchone()[0]
+
     if search:
         cursor.execute(
             "SELECT * FROM volunteers WHERE name LIKE ?",
@@ -49,11 +53,14 @@ def dashboard():
         cursor.execute("SELECT * FROM volunteers")
 
     volunteers = cursor.fetchall()
+
     conn.close()
 
-    return render_template("dashboard.html", volunteers=volunteers)
-
-
+    return render_template(
+        "dashboard.html",
+        volunteers=volunteers,
+        total_volunteers=total_volunteers
+    )
 # ---------------- LOGIN ----------------
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -151,8 +158,9 @@ def download():
             "Content-Disposition": "attachment; filename=volunteers.csv"
         }
     )
-
-
+@app.route("/logout")
+def logout():
+    return redirect("/login")
 # ---------------- RUN ----------------
 if __name__ == "__main__":
     app.run(debug=True)
