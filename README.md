@@ -48,11 +48,11 @@ http://127.0.0.1:5000
 
 ### Registration Page
 
-![Registration Page](screenshots/registration.png)
+![Registration Page](screenshots/registration%20page.png)
 
 ### Login Page
 
-![Login Page](screenshots/login.png)
+![Login Page](screenshots/login%20page.png)
 
 ### Dashboard
 
