@@ -46,11 +46,17 @@ http://127.0.0.1:5000
 
 ## Screenshots
 
-Registration Page
+### Registration Page
 
-Login Page
+![Registration Page](screenshots/registration.png)
 
-Dashboard
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
 
 ## Future Enhancements
 
