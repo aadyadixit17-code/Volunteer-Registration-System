@@ -1,6 +1,6 @@
 # 🌸 Volunteer Registration System
 
-A modern, secure, and fully-featured **Volunteer Registration System** built with **Python (Flask)**, **SQLite**, **HTML/CSS**, and **Bootstrap 5**. Designed with a gorgeous, cohesive **lavender/purple pastel theme**, custom fonts (Poppins), and custom success layouts.
+A modern, secure, and fully-featured **Volunteer Registration System** built with **Python (Flask)**, **SQLite**, **HTML/CSS**, and **Bootstrap 5**. Designed with a  cohesive **attractive pastel theme**, custom fonts, and custom success layouts.
 
 ---
 
@@ -58,3 +58,21 @@ A modern, secure, and fully-featured **Volunteer Registration System** built wit
    ```bash
    git clone [https://github.com/your-username/volunteer-registration-system.git](https://github.com/your-username/volunteer-registration-system.git)
    cd volunteer-registration-system
+
+2. **Install dependencies:**
+```bash
+Bash
+pip install flask werkzeug
+```
+3. Run the application:
+```bash
+Bash
+
+python app.py
+```
+4. Access in your browser:
+```bash
+User Portal: http://127.0.0.1:5000/
+
+Admin Login: http://127.0.0.1:5000/login (Default credentials: username admin, password admin123)
+```
