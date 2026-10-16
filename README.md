@@ -64,13 +64,13 @@ A modern, secure, and fully-featured **Volunteer Registration System** built wit
 Bash
 pip install flask werkzeug
 ```
-3. Run the application:
+3. **Run the application:**
 ```bash
 Bash
 
 python app.py
 ```
-4. Access in your browser:
+4. **Access in your browser:**
 ```bash
 User Portal: http://127.0.0.1:5000/
 
