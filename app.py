@@ -1,8 +1,34 @@
 from flask import Flask, render_template, request, Response, redirect, session, url_for
 import sqlite3
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = "my_secret_key_here"  # Needed for session management
+app.secret_key = "my_secret_key_here"  # Required for session management
+
+
+# ---------------- INITIALIZE ADMIN ----------------
+def init_admin():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS admins (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE,
+            password TEXT
+        )
+    """)
+    # Check if admin already exists
+    cursor.execute("SELECT * FROM admins WHERE username = ?", ("admin",))
+    if not cursor.fetchone():
+        # Hash the password 'admin123' securely
+        hashed_password = generate_password_hash("admin123")
+        cursor.execute("INSERT INTO admins (username, password) VALUES (?, ?)", ("admin", hashed_password))
+    
+    conn.commit()
+    conn.close()
+
+# Run admin initialization when starting app
+init_admin()
 
 
 # ---------------- HOME / REGISTER ----------------
@@ -25,7 +51,7 @@ def home():
         conn.commit()
         conn.close()
 
-        return "<h2>Registration Successful! <a href='/'>Register Another</a> | <a href='/login'>Admin Login</a></h2>"
+        return render_template("success.html")
 
     return render_template("register.html")
 
@@ -71,7 +97,14 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username == "admin" and password == "admin123":
+        conn = sqlite3.connect("database.db")
+        cursor = conn.cursor()
+        cursor.execute("SELECT password FROM admins WHERE username = ?", (username,))
+        admin = cursor.fetchone()
+        conn.close()
+
+        # Verify username exists and password hash matches
+        if admin and check_password_hash(admin[0], password):
             session["admin"] = True  # Create session
             return redirect(url_for("dashboard"))
 

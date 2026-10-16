@@ -1,72 +1,60 @@
-# Volunteer Registration System
+# 🌸 Volunteer Registration System
 
-## Project Overview
+A modern, secure, and fully-featured **Volunteer Registration System** built with **Python (Flask)**, **SQLite**, **HTML/CSS**, and **Bootstrap 5**. Designed with a gorgeous, cohesive **lavender/purple pastel theme**, custom fonts (Poppins), and custom success layouts.
 
-Volunteer Registration System is a full-stack web application developed using Python Flask, SQLite, HTML, CSS, and Bootstrap. It allows volunteers to register and enables administrators to manage volunteer records efficiently.
+---
 
-## Features
+## 🌟 Key Features
 
-* Volunteer Registration
-* Admin Login Authentication
-* Volunteer Dashboard
-* Search Volunteers
-* Edit Volunteer Details
-* Delete Volunteers
-* Total Volunteer Counter
-* CSV Report Download
-* Logout Functionality
-* Responsive User Interface
+- **Volunteer Registration Portal:** A clean, responsive registration form allowing users to submit their personal details and skills with instant validation.
+- **Interactive Success Page:** Features a custom animated greeting layout featuring a pointing character directing users toward action buttons ("Register Another" / "Admin Login").
+- **Secure Admin Authentication:** Admins log in securely using password hashing (`werkzeug.security`) protecting all sensitive routes via session management.
+- **Admin Dashboard:** 
+  - Real-time live count of total registered volunteers.
+  - Search functionality to instantly find volunteers by name.
+  - Full CRUD Operations: View, Edit, and Delete volunteer records.
+- **Report Generation:** One-click CSV export of all registered volunteer data directly from the dashboard.
+- **Lavender Aesthetic:** Custom pastel vector background artwork, soft light purple container cards (`#f7f2fc`), and rich purple buttons (`#7b4cb0`).
 
-## Technologies Used
+---
 
-* Python
-* Flask
-* SQLite
-* HTML
-* CSS
-* Bootstrap
+## 🛠️ Tech Stack
 
-## Installation
+- **Backend:** Python, Flask, SQLite
+- **Frontend:** HTML5, CSS3, Bootstrap 5, Google Fonts (Poppins)
+- **Security:** Werkzeug Security (Password Hashing), Flask Sessions
 
-1. Clone Repository
+---
 
-git clone https://github.com/aadyadixit17-code/Volunteer-Registration-System.git
+## 📸 Project Screenshots
 
-2. Install Flask
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <b>Registration Page</b><br><br>
+      <img src="registration.png" width="100%" alt="Registration Page"/><br>
+      <sub>User sign-up portal</sub>
+    </td>
+    <td align="center" width="25%">
+      <b>Registration Successful</b><br><br>
+      <img src="alert.png" width="100%" alt="Registration Successful"/><br>
+      <sub>Success confirmation screen</sub>
+    </td>
+    <td align="center" width="25%">
+      <b>Dashboard</b><br><br>
+      <img src="dashboard.png" width="100%" alt="Dashboard"/><br>
+      <sub>Volunteer management & stats</sub>
+    </td>
+  </tr>
+</table>
 
-pip install flask
+*(Note: Replace `path_to_image/...` with your actual image paths or links if uploading to GitHub).*
 
-3. Run Project
+---
 
-py app.py
+## 🚀 Getting Started & Installation
 
-4. Open Browser
-
-http://127.0.0.1:5000
-
-## Screenshots
-
-### Registration Page
-
-![Registration Page](screenshots/registration%20page.png)
-
-### Login Page
-
-![Login Page](screenshots/login%20page.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-## Future Enhancements
-
-* Email Verification
-* Password Encryption
-* Role-Based Access
-* Online Deployment
-
-## Author
-
-Aadya Dixit
-B.Tech Computer Science
-IMS Engineering College
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/volunteer-registration-system.git](https://github.com/your-username/volunteer-registration-system.git)
+   cd volunteer-registration-system
