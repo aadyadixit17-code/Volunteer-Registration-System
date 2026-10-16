@@ -48,7 +48,7 @@ A modern, secure, and fully-featured **Volunteer Registration System** built wit
   </tr>
 </table>
 
-*(Note: Replace `path_to_image/...` with your actual image paths or links if uploading to GitHub).*
+
 
 ---
 
